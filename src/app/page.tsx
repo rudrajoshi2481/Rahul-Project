@@ -25,18 +25,18 @@ import {AiOutlineArrowRight} from "react-icons/ai"
 function page() {
   return (
     <Box>
-      <Box alignItems={"center"} my="6" >
-        <Box position={"absolute"} textAlign={"center"} w="65vw" mt="28" zIndex={"100"}>
+      <Box alignItems={"center"} my="6" minH={"60vh"}>
+        
         <Heading fontSize={"6xl"} fontWeight={"bold"}>BENIFEXIM LLP</Heading>
         <Text pt="1">
         {" "}
         Nostrud ullamco nisi adipisicing non nostrud enim amet commodo.{" "}
       </Text>
-        </Box>
+        
       <Box >
-      <video autoPlay loop style={{ width: '80vw',zIndex:"-1"}}>
+      {/* <video autoPlay loop style={{ width: '80vw',zIndex:"-1"}}>
         <source src="./assets/videos/shipport.mp4" />
-      </video>
+      </video> */}
       </Box>
       </Box>
       <Divider borderColor={"gray.400"}/>
@@ -73,7 +73,7 @@ const Contact = () => {
     <Box
       display={"flex"}
       flexWrap="wrap"
-      
+    
       justifyContent={"space-between"}
     >
       <Box maxW={"600"}>
@@ -86,7 +86,7 @@ const Contact = () => {
           scrambled it to make a type specimen book.{" "}
         </Text>
       </Box>
-      <VStack>
+      <VStack mt="3">
         <HStack w="full" p="1" border={"1px solid"}>
           <Box
             p="3"
