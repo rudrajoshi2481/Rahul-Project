@@ -27,7 +27,7 @@ function Navbar() {
           <Box>
             <UnorderedList display={"flex"} alignItems={"center"}>
               <ListItem listStyleType={"none"} px="4" fontWeight={"bold"}>
-                Products.
+                <Link href="/products">Products.</Link>
               </ListItem>
               <ListItem listStyleType={"none"} px="4">
                 <Link href={"/about-us"} >About Us</Link>

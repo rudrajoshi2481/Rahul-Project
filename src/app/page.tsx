@@ -20,65 +20,77 @@ import Textimonial from "../../components/Testimonials";
 import Footer from "../../components/Footer";
 import ProductCard from "../../components/HeroProductCard";
 import HeroProductCard from "../../components/HeroProductCard";
-import {AiOutlineArrowRight} from "react-icons/ai"
+import { AiOutlineArrowRight } from "react-icons/ai";
+import Image from "next/image";
+import CaursolComp from "../../components/CaursolComp";
 
 function page() {
   return (
     <Box>
-      <Box alignItems={"center"} my="6" minH={"60vh"}>
-        
-        <Heading fontSize={"6xl"} fontWeight={"bold"}>BENIFEXIM LLP</Heading>
-        <Text pt="1">
-        {" "}
-        Nostrud ullamco nisi adipisicing non nostrud enim amet commodo.{" "}
-      </Text>
-        
-      <Box >
-      {/* <video autoPlay loop style={{ width: '80vw',zIndex:"-1"}}>
-        <source src="./assets/videos/shipport.mp4" />
-      </video> */}
+      <Box alignItems={"center"} my="6">
+        <HeroPage />
       </Box>
-      </Box>
-      <Divider borderColor={"gray.400"}/>
+      <Divider borderColor={"gray.400"} />
       <Box mt="16" mb="16">
         <Product />
       </Box>
-      <Divider borderColor={"gray.400"}/>
+      <Divider borderColor={"gray.400"} />
       <Box mt="16" mb="16">
         <Contact />
       </Box>
       <Box mt="2">
         <CompanyAdv />
       </Box>
-      <Divider colorScheme="black"/>
-      <Box >
+      <Divider colorScheme="black" />
+      <Box>
         <Footer />
       </Box>
     </Box>
   );
 }
 
-const CompanyAdv = () => {
-  return(
-    <Box>
-      {/* <Heading>BENIFEXIM LLP</Heading> */}
+const HeroPage = () => {
+  return (
+    <Box display={"flex"} justifyContent={"space-between"} flexWrap={"wrap"}>
+    <CaursolComp />
+      {/* <Box>
+        <Heading fontSize={"6xl"} fontWeight={"bold"}>
+          BENIFEXIM LLP
+        </Heading>
+        <Text pt="1">
+          {" "}
+          Nostrud ullamco nisi adipisicing non nostrud enim amet commodo.{" "}
+        </Text>
+      </Box>
+      <Box>
+        <Box>
+          <Image src="/assets/images/cargo_ships.jpg" alt="image" width="500" height="200"/>
+        </Box>
+        <Box>
+        <Image src="/assets/images/cargo_ships02.jpg" alt="image" width="500" height="200"/>
+        </Box>
+      </Box> */}
     </Box>
-  )
-}
+  );
+};
+
+const CompanyAdv = () => {
+  return <Box>{/* <Heading>BENIFEXIM LLP</Heading> */}</Box>;
+};
 
 const Contact = () => {
   const [show, setshow] = useState(1);
 
   return (
-    <Box 
-    my="9"
+    <Box
+      my="9"
       display={"flex"}
       flexWrap="wrap"
-    mb="9"
-    style={{margin:"3em 0"}}
+      mb="9"
+      style={{ margin: "3em 0" }}
       justifyContent={"space-between"}
     >
-      <Box maxW={"600"} style={{margin:".5em 0"}}>
+      <Box maxW={"600"} style={{ margin: ".5em 0" }}>
         <Heading pb={"3"}>Contact us.</Heading>
         <Text>
           {" "}
@@ -127,7 +139,7 @@ const Contact = () => {
 
 const Product = () => {
   return (
-    <Box  my="6" style={{margin:"3em 0"}}>
+    <Box my="6" style={{ margin: "3em 0" }}>
       <Heading pb="3">Products.</Heading>
       <Text pb="3" color={"gray.400"}>
         {" "}
@@ -137,14 +149,29 @@ const Product = () => {
         scrambled it to make a type specimen book.{" "}
       </Text>
       <Box display={"flex"} flexWrap={"wrap"} justifyContent={"center"}>
-        
-      <HeroProductCard imageurl="/assets/images/cloths.jpg" name="Cloths" link=""/>
-      <HeroProductCard imageurl="/assets/images/vegitables.jpg" name="Fruits & Vegitables" link=""/>
-      <HeroProductCard imageurl="/assets/images/pharmaceuticals.jpg" name="Pharmaceuticlas" link=""/>
-      
+        <HeroProductCard
+          imageurl="/assets/images/cloths.jpg"
+          name="Cloths"
+          link=""
+        />
+        <HeroProductCard
+          imageurl="/assets/images/vegitables.jpg"
+          name="Fruits & Vegitables"
+          link=""
+        />
+        <HeroProductCard
+          imageurl="/assets/images/pharmaceuticals.jpg"
+          name="Pharmaceuticlas"
+          link=""
+        />
       </Box>
       <Box w="full" display={"flex"} justifyContent={"center"}>
-      <Button colorScheme="blue">Browse Products <span style={{marginLeft:"10px"}}><AiOutlineArrowRight /></span></Button>
+        <Button colorScheme="blue">
+          Browse Products{" "}
+          <span style={{ marginLeft: "10px" }}>
+            <AiOutlineArrowRight />
+          </span>
+        </Button>
       </Box>
     </Box>
   );
