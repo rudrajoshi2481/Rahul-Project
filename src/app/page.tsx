@@ -40,11 +40,11 @@ function page() {
       </Box>
       </Box>
       <Divider borderColor={"gray.400"}/>
-      <Box>
+      <Box mt="16" mb="16">
         <Product />
       </Box>
       <Divider borderColor={"gray.400"}/>
-      <Box mt="16">
+      <Box mt="16" mb="16">
         <Contact />
       </Box>
       <Box mt="2">
@@ -70,13 +70,15 @@ const Contact = () => {
   const [show, setshow] = useState(1);
 
   return (
-    <Box
+    <Box 
+    my="9"
       display={"flex"}
       flexWrap="wrap"
-    
+    mb="9"
+    style={{margin:"3em 0"}}
       justifyContent={"space-between"}
     >
-      <Box maxW={"600"}>
+      <Box maxW={"600"} style={{margin:".5em 0"}}>
         <Heading pb={"3"}>Contact us.</Heading>
         <Text>
           {" "}
@@ -125,7 +127,7 @@ const Contact = () => {
 
 const Product = () => {
   return (
-    <Box  my="6">
+    <Box  my="6" style={{margin:"3em 0"}}>
       <Heading pb="3">Products.</Heading>
       <Text pb="3" color={"gray.400"}>
         {" "}

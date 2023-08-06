@@ -6,9 +6,13 @@ function Footer() {
     <Box mt="9" pb="9">
       
       <Box display={"flex"} justifyContent={"space-between"} flexWrap={"wrap"}>
+      <VStack mt="3">
+        <Heading>BENIFEXIM LLP</Heading>
+        </VStack>
+
         <VStack minW={"250"} mt="3" alignItems={"flex-start"}>
           <Heading fontSize={"md"}>Meet Team</Heading>
-          <UnorderedList listStyleType={"none"} >
+          <UnorderedList listStyleType={"none"} p="0" m="0">
             <ListItem>Products</ListItem>
             <ListItem>Meet Team </ListItem>
             <ListItem>About Company</ListItem>
@@ -17,7 +21,7 @@ function Footer() {
         </VStack>
         <VStack minW={"250"} mt="3" alignItems={"flex-start"}> 
           <Heading fontSize={"md"}>Pages</Heading>
-          <UnorderedList listStyleType={"none"}>
+          <UnorderedList listStyleType={"none"} m="0">
             <ListItem>About Us</ListItem>
             <ListItem>Contact Us</ListItem>
             <ListItem>VErify liscences</ListItem>
@@ -28,9 +32,6 @@ function Footer() {
           <Heading fontSize={"xl"}>News Letter</Heading>
           <Input type="email" placeholder="email address" borderColor={"black"}/>
           <Button colorScheme="green">Submit </Button>
-        </VStack>
-        <VStack mt="3">
-        <Heading>BENIFEXIM LLP</Heading>
         </VStack>
 
       </Box>
