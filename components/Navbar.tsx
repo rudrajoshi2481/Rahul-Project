@@ -3,6 +3,7 @@ import { Box, Button, HStack, ListItem, UnorderedList } from "@chakra-ui/react";
 import React from "react";
 import { useMediaQuery } from "@chakra-ui/react";
 import Link from "next/link";
+import Image from "next/image";
 function Navbar() {
   // ssr-friendly media query with fallback
   const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
@@ -13,7 +14,7 @@ function Navbar() {
       justifyContent={"center"}
       borderBottomStyle={"solid"}
       borderBottomWidth={"1px"}
-      py="6"
+      py="2"
       position={"sticky"}
       top={"0"}
       className="glass-effect"
@@ -21,7 +22,7 @@ function Navbar() {
       <HStack w="full" justifyContent={"space-between"} maxW={"container.xl"}>
         <Box ml="3">
         
-          <Link href="/">BENIFEXIM LLP</Link>
+          <Link href="/"><Image src="/assets/images/logo.png" alt="logo" width={"100"} height={"100"}/></Link>
         </Box>
         {isLargerThan800 ? (
           <Box>

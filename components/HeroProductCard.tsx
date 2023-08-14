@@ -4,7 +4,7 @@ import {
   Flex,
   Circle,
   Box,
-  Image,
+  
   Badge,
   useColorModeValue,
   Icon,
@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
-
+import Image from "next/image"
 const data = {
   isNew: true,
   imageURL: "/assets/images/cloths.jpg",
@@ -89,14 +89,18 @@ function ProductsCard({imageurl,name,link}:any) {
             bg="red.200"
           />
         )}
-
-        <Image
+<Box display={"flex"} maxH={"200"} justifyContent={"center"}>
+  
+<Image
           src={data.imageURL}
-          height={"200"}
-          
+          height={"1"}
+          width={"2"}
+          layout="responsive"
+          quality={"20"}
           alt={`Picture of ${data.name}`}
-          roundedTop="lg"
+          // roundedTop="lg"
         />
+</Box>
 
         <Box p="6">
           <Box display="flex" alignItems="baseline">
@@ -129,14 +133,14 @@ function ProductsCard({imageurl,name,link}:any) {
             </Tooltip>
           </Flex>
 
-          <Flex justifyContent="space-between" alignContent="center">
-            <Rating rating={data.rating} numReviews={data.numReviews} />
-            <Box fontSize="2xl" color={useColorModeValue("gray.800", "white")}>
+          <Flex minW={"300px"} justifyContent="space-between" alignContent="center">
+            {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
+            {/* <Box fontSize="2xl" color={useColorModeValue("gray.800", "white")}>
               <Box as="span" color={"gray.600"} fontSize="lg">
                 £
               </Box>
               {data.price.toFixed(2)}
-            </Box>
+            </Box> */}
           </Flex>
         </Box>
       </Box>

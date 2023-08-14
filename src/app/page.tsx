@@ -13,6 +13,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import Link from "next/link"
 import React, { useState } from "react";
 import WhatsAppContactComponent from "../../components/WhatsAppContactComponent";
 import EmailComponent from "../../components/EmailComponent";
@@ -38,9 +39,7 @@ function page() {
       <Box mt="16" mb="16">
         <Contact />
       </Box>
-      <Box mt="2">
-        <CompanyAdv />
-      </Box>
+      
       <Divider colorScheme="black" />
       <Box>
         <Footer />
@@ -53,29 +52,8 @@ const HeroPage = () => {
   return (
     <Box display={"flex"} justifyContent={"space-between"} flexWrap={"wrap"}>
     <CaursolComp />
-      {/* <Box>
-        <Heading fontSize={"6xl"} fontWeight={"bold"}>
-          BENIFEXIM LLP
-        </Heading>
-        <Text pt="1">
-          {" "}
-          Nostrud ullamco nisi adipisicing non nostrud enim amet commodo.{" "}
-        </Text>
-      </Box>
-      <Box>
-        <Box>
-          <Image src="/assets/images/cargo_ships.jpg" alt="image" width="500" height="200"/>
-        </Box>
-        <Box>
-        <Image src="/assets/images/cargo_ships02.jpg" alt="image" width="500" height="200"/>
-        </Box>
-      </Box> */}
     </Box>
   );
-};
-
-const CompanyAdv = () => {
-  return <Box>{/* <Heading>BENIFEXIM LLP</Heading> */}</Box>;
 };
 
 const Contact = () => {
@@ -166,12 +144,13 @@ const Product = () => {
         />
       </Box>
       <Box w="full" display={"flex"} justifyContent={"center"}>
+        <Link href="/products">
         <Button colorScheme="blue">
           Browse Products{" "}
           <span style={{ marginLeft: "10px" }}>
             <AiOutlineArrowRight />
           </span>
-        </Button>
+        </Button></Link>
       </Box>
     </Box>
   );

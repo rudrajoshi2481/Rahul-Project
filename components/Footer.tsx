@@ -1,4 +1,6 @@
 import { Box, Button, HStack, Heading, Input, ListItem, UnorderedList, VStack } from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 function Footer() {
@@ -7,7 +9,7 @@ function Footer() {
       
       <Box display={"flex"} justifyContent={"space-between"} flexWrap={"wrap"}>
       <VStack mt="3">
-        <Heading>BENIFEXIM LLP</Heading>
+      <Link href="/"><Image src="/assets/images/logo.png" alt="logo" width={"100"} height={"100"}/></Link>
         </VStack>
 
         <VStack minW={"250"} mt="3" alignItems={"flex-start"}>
