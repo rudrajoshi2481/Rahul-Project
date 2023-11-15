@@ -1,8 +1,10 @@
 "use client";
 import {
   AbsoluteCenter,
+  Badge,
   Box,
   Button,
+  Container,
   Divider,
   Flex,
   FormControl,
@@ -13,145 +15,199 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import Link from "next/link"
+import Link from "next/link";
 import React, { useState } from "react";
 import WhatsAppContactComponent from "../../components/WhatsAppContactComponent";
 import EmailComponent from "../../components/EmailComponent";
-import Textimonial from "../../components/Testimonials";
-import Footer from "../../components/Footer";
-import ProductCard from "../../components/HeroProductCard";
 import HeroProductCard from "../../components/HeroProductCard";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import Image from "next/image";
-import CaursolComp from "../../components/CaursolComp";
+import { Poppins, Noto_Serif_Old_Uyghur } from "next/font/google";
+import ScrollAnimation from "../../components/ScrollAnimation";
+const NanumFont = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
+const NotoFonts = Noto_Serif_Old_Uyghur({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 function page() {
   return (
-    <Box>
-      <Box alignItems={"center"} my="6">
-        <HeroPage />
+    <Box mt="13px" style={{ width: "98vw" }}>
+      <Container maxW={"container.xl"}>
+        <Box mt="24">
+          <HeroPage />
+        </Box>
+      </Container>
+      <Box mt="24" mb="8">
+        <Container maxW={"container.xl"}>
+          <ScrollAnimation />
+        </Container>
       </Box>
-      <Divider borderColor={"gray.400"} />
-      <Box mt="16" mb="16">
-        <Product />
+      <Divider />
+      <Box w="full">
+        <Container maxW={"container.xl"}>
+          <Story />
+        </Container>
       </Box>
-      <Divider borderColor={"gray.400"} />
-      <Box mt="16" mb="16">
-        <Contact />
-      </Box>
-      
-      <Divider colorScheme="black" />
-      <Box>
-        <Footer />
+      <Divider />
+      <Box w="full">
+        <Container maxW={"container.xl"}>
+          <Products />
+        </Container>
       </Box>
     </Box>
   );
 }
 
-const HeroPage = () => {
-  return (
-    <Box display={"flex"} justifyContent={"space-between"} flexWrap={"wrap"}>
-    <CaursolComp />
+const Products = () => {
+  return(
+    <Box mt="16">
+       <Heading
+        fontSize={"xxx-large"}
+        className={NotoFonts.className}
+        fontWeight={"extra-bold"}
+        textAlign={"center"}
+        pb="3"
+      >
+        Products
+      </Heading>
     </Box>
-  );
-};
+  )
+}
 
-const Contact = () => {
-  const [show, setshow] = useState(1);
-
+const Story = () => {
   return (
-    <Box
-      my="9"
-      display={"flex"}
-      flexWrap="wrap"
-      mb="9"
-      style={{ margin: "3em 0" }}
-      justifyContent={"space-between"}
-    >
-      <Box maxW={"600"} style={{ margin: ".5em 0" }}>
-        <Heading pb={"3"}>Contact us.</Heading>
-        <Text>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.{" "}
+    <Box mt="8" w="full">
+      <Heading
+        fontSize={"xxx-large"}
+        className={NotoFonts.className}
+        fontWeight={"extra-bold"}
+        textAlign={"center"}
+        pb="3"
+      >
+        Our Stories
+      </Heading>
+      <Box maxW={"600px"}>
+        <Heading
+          pt="6"
+          fontSize={"3xl"}
+          className={NanumFont.className}
+          fontWeight={"bold"}
+        >
+          Global Excellence in Delivery:
+        </Heading>
+        <Text fontSize={"xl"} textAlign={"justify"} pt="3">
+          At Benifexim, we pride ourselves on a commitment to delivering a
+          diverse range of high-quality products worldwide. From meeting
+          specific demands to ensuring timely deliveries, our global presence
+          guarantees satisfaction at every corner of the globe.
         </Text>
       </Box>
-      <VStack mt="3">
-        <HStack w="full" p="1" border={"1px solid"}>
-          <Box
-            p="3"
-            flex="1"
-            textAlign={"center"}
-            border={show == 1 ? "1px solid white" : ""}
-            bg={show == 1 ? "green.400" : ""}
-            borderRadius={"5"}
-            onClick={(e) => {
-              setshow(1);
-            }}
-            cursor={"pointer"}
-          >
-            What's app
-          </Box>
-          <Box
-            border={show == 0 ? "1px solid white" : ""}
-            bg={show == 0 ? "green.400" : ""}
-            p="3"
-            flex="1"
-            borderRadius={"5"}
-            textAlign={"center"}
-            onClick={(e) => {
-              setshow(0);
-            }}
-            cursor={"pointer"}
-          >
-            Email address
-          </Box>
-        </HStack>
-        <Box>{show ? <WhatsAppContactComponent /> : <EmailComponent />}</Box>
-      </VStack>
+      <Box
+        display={"flex"}
+        justifyContent={"flex-end"}
+        flexDir={"column"}
+        alignItems={"flex-end"}
+        w="full"
+        mt="12"
+        // bg="orange"
+      >
+        <Heading
+          pt="6"
+          fontSize={"3xl"}
+          className={NanumFont.className}
+          fontWeight={"bold"}
+        >
+          Global Market Impact:
+        </Heading>
+        <Text maxW={"600px"} textAlign={"justify"} fontSize={"xl"} pt="3">
+          Benifexim is not just a local player; our increasing global reach has
+          positioned us as a major exporter to 11 different countries. Continual
+          improvement in the quality of our products gives us unparalleled
+          access to diverse markets, reinforcing our status as a trusted and
+          impactful player in the international trade arena.
+        </Text>
+      </Box>
+      <Box maxW={"600px"} mt="12">
+        <Heading
+          pt="6"
+          fontSize={"3xl"}
+          className={NanumFont.className}
+          fontWeight={"bold"}
+        >
+          Customer-Centric Energy:
+        </Heading>
+        <Text fontSize={"xl"} textAlign={"justify"} pt="3">
+          Our customer focus is not just a philosophy; it's a way of life at
+          Benifexim. We thrive on understanding and living with the energy of
+          our customers, constantly adapting to their needs and speed. As your
+          strong and reliable partner, customer satisfaction remains our top
+          priority.
+        </Text>
+      </Box>
+      <Box
+        display={"flex"}
+        justifyContent={"flex-end"}
+        flexDir={"column"}
+        alignItems={"flex-end"}
+        w="full"
+        mt="12"
+        // bg="orange"
+      >
+        <Heading
+          pt="6"
+          className={NanumFont.className}
+          fontSize={"3xl"}
+          fontWeight={"bold"}
+        >
+          Cost Reflects Quality:
+        </Heading>
+        <Text maxW={"600px"} textAlign={"justify"} fontSize={"xl"} pt="3">
+          In the realm of import and export, Benifexim stands firm on the
+          principle that cost is proportional to quality. We maintain rigorous
+          quality standards across our product range, ensuring that every
+          shipment reflects our unwavering dedication to excellence.
+        </Text>
+      </Box>
     </Box>
   );
 };
 
-const Product = () => {
+const HeroPage = () => {
   return (
-    <Box my="6" style={{ margin: "3em 0" }}>
-      <Heading pb="3">Products.</Heading>
-      <Text pb="3" color={"gray.400"}>
-        {" "}
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.{" "}
+    <Box
+      display={"flex"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      flexDir={"column"}
+    >
+      <Heading
+        pt="24"
+        textAlign={"center"}
+        fontSize={"xxx-large"}
+        className="linear_gradient_hero"
+      >
+        Benifexim
+      </Heading>
+      <Heading textAlign={"center"} className={NanumFont.className}>
+        Elevating Excellence in Exports
+      </Heading>
+      <Text
+        mt="2"
+        fontSize={"xl"}
+        className={NanumFont.className}
+        textAlign={"center"}
+      >
+        Benifexim, a leading name in international exports, specializes in
+        delivering superior quality food,{" "}
+        <Badge colorScheme="green">vegetables</Badge>,{" "}
+        <Badge colorScheme="orange">clothing</Badge>, and
+        <Badge colorScheme="blue">pharmaceuticals</Badge>. Our unwavering
+        commitment to excellence and global standards defines us as a trusted
+        partner for premium products worldwide.
       </Text>
-      <Box display={"flex"} flexWrap={"wrap"} justifyContent={"center"}>
-        <HeroProductCard
-          imageurl="/assets/images/cloths.jpg"
-          name="Cloths"
-          link=""
-        />
-        <HeroProductCard
-          imageurl="/assets/images/vegitables.jpg"
-          name="Fruits & Vegitables"
-          link=""
-        />
-        <HeroProductCard
-          imageurl="/assets/images/pharmaceuticals.jpg"
-          name="Pharmaceuticlas"
-          link=""
-        />
-      </Box>
-      <Box w="full" display={"flex"} justifyContent={"center"}>
-        <Link href="/products">
-        <Button colorScheme="blue">
-          Browse Products{" "}
-          <span style={{ marginLeft: "10px" }}>
-            <AiOutlineArrowRight />
-          </span>
-        </Button></Link>
-      </Box>
     </Box>
   );
 };
