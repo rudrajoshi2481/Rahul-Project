@@ -1,6 +1,7 @@
 "use client";
 import {
   Box,
+  Container,
   HStack,
   Heading,
   Tag,
@@ -10,6 +11,15 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import HeroProductCard from "../../../components/HeroProductCard";
+import { Noto_Serif_Old_Uyghur } from "next/font/google";
+
+
+const NotoFonts = Noto_Serif_Old_Uyghur({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+
 
 const food = [
   {
@@ -44,17 +54,50 @@ const food = [
 
 const cloth = [
   {
-    name: "Silk",
-    image: "/assets/images/slik.jpg",
+    "name": "Leggings",
+    "image": "/assets/images/leggings.jpg",
   },
   {
-    name: "Cotton",
-    image: "/assets/images/cotton.jpg",
+    "name": "Shorts",
+    "image": "/assets/images/shorts.jpg"
   },
   {
-    name: "Multimode Fiber",
-    image: "/assets/images/cotton.jpg",
+    "name": "Tops",
+    "image": "/assets/images/tops.jpg"
   },
+  {
+    "name": "Hoodies",
+    "image": "/assets/images/hoodies.jpg"
+  },
+  {
+    "name": "Jackets",
+    "image": "/assets/images/jackets.jpg"
+  },
+  {
+    "name": "Gymwear",
+    "image": "/assets/images/gymwear.jpg"
+  },
+  {
+    "name": "Yoga Pants",
+    "image": "/assets/images/yogapants.jpg"
+  },
+  {
+    "name": "Tank Tops",
+    "image": "/assets/images/tanktops.jpg"
+  },
+  {
+    "name": "Sports Bras",
+    "image": "/assets/images/sportsbras.jpg"
+  },
+  {
+    "name": "Teamwear",
+    "image": "/assets/images/teamwear.jpg"
+  },
+  {
+    "name": "Sweatshirt Leggings",
+    "image": "/assets/images/sweatshirtleggings.jpg"
+  }
+  // Add more items as needed
 ];
 
 const pharmaceuticals = [
@@ -79,28 +122,10 @@ const pharmaceuticals = [
 function pages() {
   return (
     <Box>
-      <Text color="yellow.400" mt="6">
-        Page in development ⚠
-      </Text>
-      <Heading mt="9">Catalog</Heading>
-      <HStack borderColor={"green.400"} border={"1px"} p="3" my="3">
-        {" "}
-        <Tag borderRadius="full" variant="solid" colorScheme="green">
-          <TagLabel>Fruits & Vegitables</TagLabel>
-          <TagCloseButton />
-        </Tag>
-        <Tag borderRadius="full" variant="solid" colorScheme="green">
-          <TagLabel>Cloths</TagLabel>
-          <TagCloseButton />
-        </Tag>
-        <Tag borderRadius="full" variant="solid" colorScheme="green">
-          <TagLabel>Pharmaceuticals</TagLabel>
-          <TagCloseButton />
-        </Tag>
-      </HStack>
-      <Box>
-        <ProductsList />
-      </Box>
+    <Container mt="28" maxW={"container.xl"}>
+    <Heading className={NotoFonts.className} textAlign={"center"}>Products</Heading>
+      <ProductsList />
+    </Container>
     </Box>
   );
 }
@@ -108,20 +133,24 @@ function pages() {
 const ProductsList = () => {
   return (
     <Box>
-      <Heading  my="6">Food and vegitables.</Heading>
-      <Box display={"flex"} flexWrap={"wrap"}>
+      <Heading  mt="9" className={NotoFonts.className}>Food and vegitables.</Heading>
+     
+      <Text mt="5" mb="9" maxW={"600"}>Benifexim, a leading international export company, sets the standard for excellence in delivering premium products across food, clothing, and pharmaceutical sectors. Our commitment to quality and global satisfaction is evident in each meticulously curated export, such as the vibrant array of fruits and vegetables in our 'FRUIT AND VEGETABLE' category.</Text>
+      <Box display={"flex"} flexWrap={"wrap"} gap="5">
         {food.map((e: any) => {
           return <Card image={e.image} name={e.name} />;
         })}
       </Box>
-      <Heading  my="6">Cloths.</Heading>
-      <Box display={"flex"} flexWrap={"wrap"}>
+      <Heading  mt="24" className={NotoFonts.className} fontWeight={"bold"}>Cloths.</Heading>
+      <Text mt="5" mb="9" maxW={"600"}>Benifexim, an esteemed international export company, extends its commitment to excellence into the realm of clothing. Specializing in premium sportswear, including luxurious silk, comfortable cotton, and high-tech Multimode Fiber, our dedication to superior quality and global standards ensures that each garment under the 'SPORTSWEAR' category reflects the pinnacle of fashion and functionality.</Text>
+      <Box display={"flex"} flexWrap={"wrap"} gap="5">
         {cloth.map((e: any) => {
           return <Card image={e.image} name={e.name} />;
         })}
       </Box>
-      <Heading my="6">Pharmaceuticals</Heading>
-      <Box display={"flex"} flexWrap={"wrap"}>
+      <Heading mt="24" className={NotoFonts.className}>Pharmaceuticals</Heading>
+      <Text mt="5" mb="9" maxW={"600"}>Benifexim, a leading international export powerhouse, epitomizes excellence across sectors. From premium pharmaceuticals like Metformin and Aspirin to top-tier food, clothing, and more, our unwavering commitment to quality and global standards ensures an unparalleled export experience, enriching lives worldwide with precision and professionalism.</Text>
+      <Box display={"flex"} flexWrap={"wrap"} gap="5">
         {pharmaceuticals.map((e: any) => {
           return <Card image={e.image} name={e.name} />;
         })}

@@ -23,6 +23,7 @@ import HeroProductCard from "../../components/HeroProductCard";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { Poppins, Noto_Serif_Old_Uyghur } from "next/font/google";
 import ScrollAnimation from "../../components/ScrollAnimation";
+import Image from "next/image";
 const NanumFont = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -35,14 +36,24 @@ const NotoFonts = Noto_Serif_Old_Uyghur({
 function page() {
   return (
     <Box mt="13px" style={{ width: "98vw" }}>
-      <Container maxW={"container.xl"}>
-        <Box mt="24">
-          <HeroPage />
-        </Box>
-      </Container>
-      <Box mt="24" mb="8">
+      <Box className="hero" mt="16">
+        {/* <Box > */}
+        {/* <Image src={"/container.jpg"}  layout="fill" alt="image"/> */}
+        <Container height={"60vh"} maxW={"container.xl"}>
+          <Box pt="28" mt="28" >
+            <HeroPage />
+          </Box>
+        </Container>
+        {/* </Box> */}
+      </Box>
+      <Box mt="9" mb="8">
         <Container maxW={"container.xl"}>
           <ScrollAnimation />
+        </Container>
+      </Box>
+      <Box>
+        <Container maxW={"container.xl"}>
+          <Logos />
         </Container>
       </Box>
       <Divider />
@@ -61,10 +72,33 @@ function page() {
   );
 }
 
+const Logos = () => {
+  return (
+    <Box
+      display={"flex"}
+      w="full"
+      justifyContent={"space-between"}
+      mt="9"
+      mb="3"
+    >
+      <Image
+        src={"/GST.png"}
+        layout="fixed"
+        width={"150"}
+        height={"150"}
+        alt="GST LOGO"
+      />
+      <Image src={"/Apeda.png"} width={"250"} height={"250"} alt="GST LOGO" />
+      <Image src="/logo.png" width="250" height="150" alt="image" />
+      <Image src={"/fssai01.png"} width={"200"} height={"200"} alt="GST LOGO" />
+    </Box>
+  );
+};
+
 const Products = () => {
-  return(
+  return (
     <Box mt="16">
-       <Heading
+      <Heading
         fontSize={"xxx-large"}
         className={NotoFonts.className}
         fontWeight={"extra-bold"}
@@ -74,8 +108,8 @@ const Products = () => {
         Products
       </Heading>
     </Box>
-  )
-}
+  );
+};
 
 const Story = () => {
   return (
@@ -119,6 +153,7 @@ const Story = () => {
           fontSize={"3xl"}
           className={NanumFont.className}
           fontWeight={"bold"}
+          textAlign={"left"}
         >
           Global Market Impact:
         </Heading>
@@ -178,18 +213,26 @@ const Story = () => {
 const HeroPage = () => {
   return (
     <Box
+      
+      // style={{ height: "60vh" }}
+      // mt="28"
+    >
+      <Box 
+      p="9"
+      className="bgblurr"
+      // bg="red"
       display={"flex"}
       justifyContent={"center"}
       alignItems={"center"}
-      flexDir={"column"}
-    >
+      flexDir={"column"}>
       <Heading
-        pt="24"
+        
         textAlign={"center"}
         fontSize={"xxx-large"}
         className="linear_gradient_hero"
       >
         Benifexim
+        {/* <Image src="/logo.png" width="350" height="350" alt="image"/> */}
       </Heading>
       <Heading textAlign={"center"} className={NanumFont.className}>
         Elevating Excellence in Exports
@@ -208,6 +251,7 @@ const HeroPage = () => {
         commitment to excellence and global standards defines us as a trusted
         partner for premium products worldwide.
       </Text>
+      </Box>
     </Box>
   );
 };

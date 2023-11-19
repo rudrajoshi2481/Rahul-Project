@@ -5,7 +5,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Appbar from "../../components/Appbar";
-import { ChakraProvider, Container } from "@chakra-ui/react";
+import { Box, ChakraProvider, Container, Text } from "@chakra-ui/react";
 import { CacheProvider } from "@chakra-ui/next-js";
 import "./globals.css";
 
@@ -25,7 +25,12 @@ export default function RootLayout({
       <body className={poppins.className}>
         <CacheProvider>
           <ChakraProvider>
+            <Box w="full" zIndex={"50"}  top="0" pos={"fixed"} mb="15">
+
+            
+            <Contact />
               <Appbar />
+            </Box>
             
             {children}
           </ChakraProvider>
@@ -33,6 +38,17 @@ export default function RootLayout({
       </body>
     </html>
   );
+}
+
+const Contact = () => {
+  return(<>
+    <Box w="full" py="1" mb="0"  className="contact">
+<Container maxW={"container.lg"}>
+
+<Text textAlign={"right"} color={"white"}>Contact No : 7041303457</Text>
+</Container>
+    </Box>
+  </>)
 }
 
 // import type { Metadata } from 'next'

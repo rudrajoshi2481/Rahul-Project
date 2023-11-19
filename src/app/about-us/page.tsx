@@ -7,7 +7,7 @@ import Head from "next/head";
 function page() {
   return (
     <Container maxW={"container.xl"}>
-      <Box mt="24">
+      <Box mt="28">
         <Heading>About Us.</Heading>
 
         <Text fontSize={"xl"} mt="12">

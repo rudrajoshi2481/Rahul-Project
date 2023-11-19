@@ -1,33 +1,60 @@
-body{
+body {
   background: #f8f7f4;
 }
 .glass-effect {
-    background: rgba(255, 255, 255, 0.199);
-    backdrop-filter: blur(2px);
-    z-index: 1;
-  }
+  background: rgba(255, 255, 255, 0.199);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
 
-  .linear_gradient_hero{
-    width: fit-content;
-    font-size: 6rem;
-    background: linear-gradient(90deg,#0c2c28 0,#3ba08d 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent
-  }
+.hero{
+  background-image: url("../../public/assets/images/cargo_ships02.jpg");
+  width: 100vw;
+  /* height: 60vh; */
+  /* filter: blur(1px); */
+  z-index: -95;
+  background-size: cover; /* Adjust as needed */
+  background-position: center;
+  /* object-fit: contain; */
+}
+.bgblurr{
+  background: rgba(228, 228, 228, 0.548) !important;
+backdrop-filter: blur(15px);
 
+}
 
+.linear_gradient_hero {
+  width: fit-content;
+  font-size: 6rem;
+  /* background: linear-gradient(90deg, rgba(6,0,105,1) 0%, rgba(9,9,121,1) 43%, rgba(0,212,255,1) 100%); */
+  background: rgb(6, 0, 105);
+  background: radial-gradient(
+    circle,
+    rgba(6, 0, 105, 1) 0%,
+    rgba(9, 9, 121, 1) 43%,
+    rgba(5, 16, 138, 1) 100%
+  );
+  /* background: linear-gradient(90deg,#0c2c28 0,#3ba08d 100%) !important; */
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+}
 
+.contact {
+  background: rgb(6, 0, 105);
+  background: linear-gradient(
+    90deg,
+    rgba(6, 0, 105, 1) 0%,
+    rgba(9, 9, 121, 1) 43%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
 
 .appbar {
-  
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 20px;
-  background-image: radial-gradient(
-    rgba(0, 0, 0, 0) 1px,
-    #fdfdfd 1px
-  );
+  background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #fdfdfd 1px);
   background-size: 4px 4px;
   backdrop-filter: blur(3px);
   font-size: 14px;
@@ -46,9 +73,6 @@ body{
   background: #111111;
   opacity: 0.2;
 }
-
-
-
 
 .progress {
   position: fixed;
