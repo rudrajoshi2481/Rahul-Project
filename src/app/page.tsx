@@ -143,7 +143,7 @@ const Story = () => {
         </VStack>
         <VStack>
         
-          <Image src={"/assets/delivery.jpg"} alt="deliveryImage" width={"550"} height={"550"}/>
+          <Image src={"/assets/delivery.jpg"} quality={"50"} alt="deliveryImage" width={"550"} height={"550"}/>
         </VStack>
       </Box>
       <Box
@@ -154,7 +154,7 @@ const Story = () => {
         // bg="orange"
         justifyContent={"space-between"}
       >
-        <VStack><Image src={"/assets/market.jpg"} alt="deliveryImage" width={"550"} height={"550"}/></VStack>
+        <VStack><Image quality={"50"} src={"/assets/market.jpg"} alt="deliveryImage" width={"550"} height={"550"}/></VStack>
       <VStack>
       <Heading
           pt="6"
@@ -194,7 +194,7 @@ const Story = () => {
         </Text>
        </VStack>
        
-       <VStack><Image src={"/assets/customer.jpg"} alt="deliveryImage" width={"550"} height={"550"}/></VStack>
+       <VStack><Image src={"/assets/customer.jpg"} quality={"50"} alt="deliveryImage" width={"550"} height={"550"}/></VStack>
        
       </Box>
       <Box
@@ -204,7 +204,7 @@ const Story = () => {
         mt="12"
         // bg="orange"
       >
-          <VStack><Image src={"/assets/quality.jpg"} alt="deliveryImage" width={"550"} height={"550"}/></VStack>
+          <VStack><Image src={"/assets/quality.jpg"} alt="deliveryImage" quality={"50"} width={"550"} height={"550"}/></VStack>
         <VStack>
         <Heading
           pt="6"
