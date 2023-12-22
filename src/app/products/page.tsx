@@ -121,7 +121,7 @@ const pharmaceuticals = [
 
 function pages() {
   return (
-    <Box>
+    <Box mb="26">
     <Container mt="28" maxW={"container.xl"}>
     <Heading className={NotoFonts.className} textAlign={"center"}>Products</Heading>
       <ProductsList />

@@ -40,16 +40,16 @@ function page() {
         {/* <Box > */}
         {/* <Image src={"/container.jpg"}  layout="fill" alt="image"/> */}
         <Container height={"60vh"} maxW={"container.xl"}>
-          <Box pt="28" mt="28" >
+          <Box pt="28" mt="28">
             <HeroPage />
           </Box>
         </Container>
         {/* </Box> */}
       </Box>
       <Box mt="9" mb="8">
-        <Container maxW={"container.xl"}>
-          <ScrollAnimation />
-        </Container>
+        <ScrollAnimation />
+        {/* <Container maxW={"container.xl"}>
+        </Container> */}
       </Box>
       <Box>
         <Container maxW={"container.xl"}>
@@ -77,6 +77,7 @@ const Logos = () => {
     <Box
       display={"flex"}
       w="full"
+      flexWrap={"wrap"}
       justifyContent={"space-between"}
       mt="9"
       mb="3"
@@ -123,37 +124,45 @@ const Story = () => {
       >
         Our Stories
       </Heading>
-      <Box maxW={"600px"}>
-        <Heading
-          pt="6"
-          fontSize={"3xl"}
-          className={NanumFont.className}
-          fontWeight={"bold"}
-        >
-          Global Excellence in Delivery:
-        </Heading>
-        <Text fontSize={"xl"} textAlign={"justify"} pt="3">
-          At Benifexim, we pride ourselves on a commitment to delivering a
-          diverse range of high-quality products worldwide. From meeting
-          specific demands to ensuring timely deliveries, our global presence
-          guarantees satisfaction at every corner of the globe.
-        </Text>
+      <Box mt="12" display={"flex"} justifyContent={"space-between"} flexWrap={"wrap-reverse"}>
+        <VStack maxW={"600px"}>
+          <Heading
+            pt="6"
+            fontSize={"3xl"}
+            className={NanumFont.className}
+            fontWeight={"bold"}
+          >
+            Global Excellence in Delivery:
+          </Heading>
+          <Text fontSize={"xl"} textAlign={"justify"} pt="3">
+            At Benifexim, we pride ourselves on a commitment to delivering a
+            diverse range of high-quality products worldwide. From meeting
+            specific demands to ensuring timely deliveries, our global presence
+            guarantees satisfaction at every corner of the globe.
+          </Text>
+        </VStack>
+        <VStack>
+        
+          <Image src={"/assets/delivery.jpg"} alt="deliveryImage" width={"550"} height={"550"}/>
+        </VStack>
       </Box>
       <Box
         display={"flex"}
-        justifyContent={"flex-end"}
-        flexDir={"column"}
-        alignItems={"flex-end"}
+        flexWrap={"wrap"}
         w="full"
         mt="12"
         // bg="orange"
+        justifyContent={"space-between"}
       >
-        <Heading
+        <VStack><Image src={"/assets/market.jpg"} alt="deliveryImage" width={"550"} height={"550"}/></VStack>
+      <VStack>
+      <Heading
           pt="6"
           fontSize={"3xl"}
           className={NanumFont.className}
           fontWeight={"bold"}
           textAlign={"left"}
+
         >
           Global Market Impact:
         </Heading>
@@ -164,9 +173,11 @@ const Story = () => {
           access to diverse markets, reinforcing our status as a trusted and
           impactful player in the international trade arena.
         </Text>
+      </VStack>
       </Box>
-      <Box maxW={"600px"} mt="12">
-        <Heading
+      <Box  mt="12" flexWrap={"wrap-reverse"} display={"flex"} justifyContent={"space-between"}>
+       <VStack maxW={"600px"}>
+       <Heading
           pt="6"
           fontSize={"3xl"}
           className={NanumFont.className}
@@ -181,16 +192,20 @@ const Story = () => {
           strong and reliable partner, customer satisfaction remains our top
           priority.
         </Text>
+       </VStack>
+       
+       <VStack><Image src={"/assets/customer.jpg"} alt="deliveryImage" width={"550"} height={"550"}/></VStack>
+       
       </Box>
       <Box
         display={"flex"}
-        justifyContent={"flex-end"}
-        flexDir={"column"}
-        alignItems={"flex-end"}
-        w="full"
+        flexWrap={"wrap"}
+        justifyContent={"space-between"}
         mt="12"
         // bg="orange"
       >
+          <VStack><Image src={"/assets/quality.jpg"} alt="deliveryImage" width={"550"} height={"550"}/></VStack>
+        <VStack>
         <Heading
           pt="6"
           className={NanumFont.className}
@@ -205,6 +220,7 @@ const Story = () => {
           quality standards across our product range, ensuring that every
           shipment reflects our unwavering dedication to excellence.
         </Text>
+        </VStack>
       </Box>
     </Box>
   );
@@ -213,44 +229,44 @@ const Story = () => {
 const HeroPage = () => {
   return (
     <Box
-      
-      // style={{ height: "60vh" }}
-      // mt="28"
+
+    // style={{ height: "60vh" }}
+    // mt="28"
     >
-      <Box 
-      p="9"
-      className="bgblurr"
-      // bg="red"
-      display={"flex"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      flexDir={"column"}>
-      <Heading
-        
-        textAlign={"center"}
-        fontSize={"xxx-large"}
-        className="linear_gradient_hero"
+      <Box
+        p="9"
+        className="bgblurr"
+        // bg="red"
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        flexDir={"column"}
       >
-        Benifexim
-        {/* <Image src="/logo.png" width="350" height="350" alt="image"/> */}
-      </Heading>
-      <Heading textAlign={"center"} className={NanumFont.className}>
-        Elevating Excellence in Exports
-      </Heading>
-      <Text
-        mt="2"
-        fontSize={"xl"}
-        className={NanumFont.className}
-        textAlign={"center"}
-      >
-        Benifexim, a leading name in international exports, specializes in
-        delivering superior quality food,{" "}
-        <Badge colorScheme="green">vegetables</Badge>,{" "}
-        <Badge colorScheme="orange">clothing</Badge>, and
-        <Badge colorScheme="blue">pharmaceuticals</Badge>. Our unwavering
-        commitment to excellence and global standards defines us as a trusted
-        partner for premium products worldwide.
-      </Text>
+        <Heading
+          textAlign={"center"}
+          fontSize={"xxx-large"}
+          className="linear_gradient_hero"
+        >
+          Benifexim
+          {/* <Image src="/logo.png" width="350" height="350" alt="image"/> */}
+        </Heading>
+        <Heading textAlign={"center"} className={NanumFont.className}>
+          Elevating Excellence in Exports
+        </Heading>
+        <Text
+          mt="2"
+          fontSize={"xl"}
+          className={NanumFont.className}
+          textAlign={"center"}
+        >
+          Benifexim, a leading name in international exports, specializes in
+          delivering superior quality food,{" "}
+          <Badge colorScheme="green">vegetables</Badge>,{" "}
+          <Badge colorScheme="orange">clothing</Badge>, and
+          <Badge colorScheme="blue">pharmaceuticals</Badge>. Our unwavering
+          commitment to excellence and global standards defines us as a trusted
+          partner for premium products worldwide.
+        </Text>
       </Box>
     </Box>
   );
